@@ -1,0 +1,37 @@
+:root {
+    --bg-green:     #6A8D73;
+    --black:        #07020D;
+    --light:        #F1E9DB;
+    --light-hover:  #e4bc78;
+    --blue:         #0353A4;
+}
+
+.background {
+    background-color: var(--bg-green);
+    height: 100vh;
+}
+
+.picture-card {
+    width: 150px;
+    height: 150px;
+    border: 4px solid var(--black);
+    border-radius: 8px;
+    background: url("./img/pic2.png") no-repeat center;
+    background-color: var(--light);
+    margin: 4px;
+}
+
+.picture-card:hover {
+    background-color: var(--light-hover);
+    transition: 150ms;
+    transform: scale(1.02);
+}
+
+.picture-grid {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100%;
+}
+
