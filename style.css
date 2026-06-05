@@ -1,14 +1,117 @@
 :root {
     --bg-green:     #6A8D73;
     --black:        #07020D;
+    --dark-green:   #2C3A2F;
     --light:        #F1E9DB;
     --light-hover:  #e4bc78;
-    --blue:         #0353A4;
+    --blue:         #0054a9;
+    --blue-selected:  #1485f6;
+    --blue-hover:  #399afb;
+    --light-blue:   #143b61;
+    --darker-blue:   #498acb;
+
+    color: var(--black)
 }
 
 .background {
     background-color: var(--bg-green);
     height: 100vh;
+}
+
+
+.cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 55%;
+    min-width: 40%;
+    background-color: var(--light);
+    border-radius: 48px;
+    padding: 24px 0px;
+}
+
+.main div {
+    padding: 8px 0px;
+}
+
+.main hr {
+    width: 100%;
+    border-top: 4px dashed var(--light-hover);
+    margin: 0;
+}
+
+.header {
+    margin-bottom: 24px;
+}
+
+.header h1{
+    letter-spacing: -4px;
+    font-weight: bolder
+}
+
+.header p {
+    color: var(--dark-green);
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.main button, .main select {
+    width: 90%;
+    background-color: var(--blue);
+    color: var(--light);
+    font-size: 28px;
+    border: 2px solid var(--light-blue);
+    border-radius: 48px;
+    padding: 8px;
+    text-align: center;
+    user-select: none;
+    box-shadow: #0000004d 0px 6px 24px 0px;
+}
+
+.main button:hover, .main select:hover, .main button.selected-mode:hover {
+    background-color: var(--blue-hover);
+    transform: scale(1.01);
+    transition: 500;
+}
+
+.main button.selected-mode {
+    background-color: var(--blue-selected);
+}
+
+.btns {
+    width: min(550px, 90%);
+}
+
+.btns:last-of-type {
+    margin-top: 50px;
+}
+
+.btn-cont {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* margin-bottom: 24px; */
+}
+
+.btn-cont h6 {
+    color: var(--dark-green);
+    font-size: 18px;
+    padding-top: 6px;
+}
+
+.btn-cont h5 {
+    color: var(--dark-green);
+    font-size: 28px;
+    width: 100%;
+    padding-left: 28px;
 }
 
 .picture-card {
