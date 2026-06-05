@@ -16,6 +16,8 @@
 .background {
     background-color: var(--bg-green);
     height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -114,12 +116,46 @@
     padding-left: 28px;
 }
 
+.game-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 36px;
+    color: var(--light);
+    flex-grow: 0;
+    padding: 0px 24px;
+}
+
+.game-header-cont {
+    display: flex;
+    justify-content: end;
+    gap: 48px;
+    font-weight: bold;
+
+    user-select: none;
+}
+
+.game-header-cont a{
+    font-size: 72px;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--light);
+}
+
+.game-header-cont a:hover {
+    transform: scale(1.1);
+    transition: 250;
+}
+
+.game-header-cont div {
+    padding-top: 36px;
+}
+
 .picture-card {
     width: 150px;
     height: 150px;
     border: 4px solid var(--black);
     border-radius: 8px;
-    background: url("./img/pic2.png") no-repeat center;
+    background: no-repeat center;
     background-color: var(--light);
     margin: 4px;
 }
@@ -135,6 +171,55 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 100%;
+    flex-grow: 1;
 }
 
+.hidden {
+    background-image: url("img/hidden.png");
+}
+
+.picture-card-1:not(.hidden) {
+    background-image: url("img/pic1.png");
+}
+.picture-card-2:not(.hidden) {
+    background-image: url("img/pic2.png");
+}
+.picture-card-3:not(.hidden) {
+    background-image: url("img/pic3.png");
+}
+.picture-card-4:not(.hidden) {
+    background-image: url("img/pic4.png");
+}
+.picture-card-5:not(.hidden) {
+    background-image: url("img/pic5.png");
+}
+.picture-card-6:not(.hidden) {
+    background-image: url("img/pic6.png");
+}
+.picture-card-7:not(.hidden) {
+    background-image: url("img/pic7.png");
+}
+.picture-card-8:not(.hidden) {
+    background-image: url("img/pic8.png");
+}
+.picture-card-9:not(.hidden) {
+    background-image: url("img/pic9.png");
+}
+.picture-card-10:not(.hidden) {
+    background-image: url("img/pic10.png");
+}
+.picture-card-11:not(.hidden) {
+    background-image: url("img/pic11.png");
+}
+.picture-card-12:not(.hidden) {
+    background-image: url("img/pic12.png");
+}
+.picture-card-13:not(.hidden) {
+    background-image: url("img/pic13.png");
+}
+.picture-card-14:not(.hidden) {
+    background-image: url("img/pic14.png");
+}
+.picture-card-15:not(.hidden) {
+    background-image: url("img/pic15.png");
+}
