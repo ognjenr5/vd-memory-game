@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Memory game</title>
+    <title>Igra memorije</title>
 
     <script src="bootstrap.bundle.min.js"></script>
     <link rel="stylesheet" href="bootstrap.min.css">
@@ -14,67 +14,49 @@
     <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
-    <div class="background">
-        <div class="picture-grid">
-            <table>
-                <tr class="r1">
-                    <td>
-                        <div class="1 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="2 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="3 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="4 picture-card"></div>
-                    </td>
-                </tr>
-                <tr class="r2">
-                    <td>
-                        <div class="1 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="2 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="3 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="4 picture-card"></div>
-                    </td>
-                </tr>
-                <tr class="r3">
-                    <td>
-                        <div class="1 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="2 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="3 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="4 picture-card"></div>
-                    </td>
-                </tr>
-                <tr class="r4">
-                    <td>
-                        <div class="1 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="2 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="3 picture-card"></div>
-                    </td>
-                    <td>
-                        <div class="4 picture-card"></div>
-                    </td>
-                </tr>
-            </table>
+<body class="main-page">
+    <div class="cont background">
+        <div class="main">
+            <div class="header text-center">
+                <h1 class="display-1">
+                    Igra memorije
+                </h1>
+                <p>
+                    Testiraj svoje pamcenje i brzinu!
+                </p>
+                <p>
+                    Izaberi jedan od dva rezima i igraj igru memorije.
+                </p>
+            </div>
+            <hr>
+            <div class="btns">
+                <div class="btn-cont">
+                    <h5>Rezim:</h5>
+                    <button class="mode selected-mode" id="classic">Klasican rezim</button>
+                    <h6>Pronadji sve parove kartica u sto manjem broju poteza.</h6>
+                </div>
+                <div class="btn-cont">
+                    <button class="mode" id="timed">Vremenski rezim</button>
+                    <h6>Za ograniceno vreme pronadji sve parove kartica.</h6>
+                </div>
+            </div>
+            <hr>
+            <div class="btns">
+                <div class="btn-cont">
+                    <h5>Nivo:</h5>
+                    <select name="lvl" id="lvl">
+                        <option value="1">Lako</option>
+                        <option value="2" selected>Srednje</option>
+                        <option value="3">Tesko</option>
+                    </select>
+                </div>
+            </div>
+            <hr>
+            <div class="btns">
+                <div class="btn-cont">
+                    <button id="start">Igraj!</button>
+                </div>
+            </div>
         </div>
     </div>
 </body>
