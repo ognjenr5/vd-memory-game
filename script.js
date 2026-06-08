@@ -343,7 +343,7 @@ function gameEnd (hasWon, score, scoreType) {
   $('#playAgainDiv').css('display', '')
   if (hasWon) {
     $('.status-game').text('Pobedili ste!')
-    $('.add-score').text('Upisite ime u tabelu?')
+    $('.add-score').text('Upišite ime u tabelu?')
     $('#addScoreDiv').css('display', '')
 
     $('#addToScore').click(function () {
@@ -382,7 +382,7 @@ function gamePageHandler () {
   createCardGrid(level)
   displayCards(level)
 
-  $('#span-level').text(level == 1 ? 'Lako' : level == 2 ? 'Srednje' : 'Tesko')
+  $('#span-level').text(level == 1 ? 'Lako' : level == 2 ? 'Srednje' : 'Teško')
 
   gameFinished = false
   if (mode == 'classic') classicGame(level)
