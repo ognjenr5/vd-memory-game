@@ -179,9 +179,10 @@ function mainPageHandler () {
   })
 
   $('#start').click(function () {
-    localStorage.setItem('level', parseInt($('#lvl').find(':selected').val()))
-    localStorage.setItem('mode', (mode = $('.selected-mode').attr('id')))
-    window.location.href = './game.html'
+    let lvl = parseInt($('#lvl').find(':selected').val())
+    let mode = $('.selected-mode').attr('id');
+    console.log("lvl: " + lvl + ", " + "mode: " + mode)
+    window.location.href = `./game.html?level=${lvl}&mode=${mode}`
   })
 }
 
@@ -340,13 +341,14 @@ function gameEnd (hasWon, score, scoreType) {
     $('#addScoreDiv').css('display', '')
 
     $('#addToScore').click(function () {
-      loadScoreBoard()
-      let newScore = {
-        user: $('#name').val(),
-        score: score
-      }
-      addScore(newScore, scoreType == 'timed')
-      window.location.href = './score.html'
+      // loadScoreBoard()
+      // addScore(newScore, scoreType == 'timed')
+
+      let user = $('#name').val()
+      let level = localStorage.getItem("level")
+      let mode = localStorage.getItem("mode")
+
+      window.location.href = `./score.html?level=${level}&mode=${mode}&user=${user}&score=${score}`
     })
   } else {
     $('.status-game').text('Izgubili ste!')
@@ -363,9 +365,13 @@ function gameEnd (hasWon, score, scoreType) {
 }
 
 function gamePageHandler () {
-  let level = parseInt(localStorage.getItem('level'))
-  let mode = localStorage.getItem('mode')
+  let params = new URLSearchParams(window.location.search)
+  let level = parseInt(params.get('level'))
+  let mode = params.get('mode')
   console.log(level + '\n' + mode)
+
+  localStorage.setItem("level", level)
+  localStorage.setItem("mode", mode)
 
   createCardGrid(level)
   displayCards(level)
@@ -486,7 +492,21 @@ function displayScores (scores, isTime) {
 }
 
 function scorePageHandler () {
+  let params = new URLSearchParams(window.location.search)
+  localStorage.setItem("level", parseInt(params.get('level')))
+  localStorage.setItem("mode", params.get('mode'))
+
   loadScoreBoard()
+
+  if (params.has('user') && params.has('score')) {
+    let newScore = {
+      user: params.get('user'),
+      score: parseInt(params.get('score'))
+    }
+    addScore(newScore, localStorage.getItem('mode') == 'timed')
+    window.name = ''
+  }
+
   if (localStorage.getItem('mode') == 'timed')
     displayScores(getBoardForScore(true), true)
   else displayScores(getBoardForScore(false), false)
