@@ -127,11 +127,14 @@
 }
 
 .btns {
+    display: flex;
+    flex-direction: column;
     width: min(550px, 90%);
 }
 
 .btns:last-of-type {
-    margin-top: 50px;
+    margin-top: 24px;
+    gap: 12px;
 }
 
 .btn-cont {
