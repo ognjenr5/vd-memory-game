@@ -13,9 +13,13 @@
     color: var(--black)
 }
 
+body {
+    height: 100%;
+}
+
 .background {
     background-color: var(--bg-green);
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
