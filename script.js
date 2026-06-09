@@ -184,6 +184,12 @@ function mainPageHandler () {
     console.log("lvl: " + lvl + ", " + "mode: " + mode)
     window.location.href = `./game.html?level=${lvl}&mode=${mode}`
   })
+
+  $('#openScores').click(function () {
+    let lvl = parseInt($('#lvl').find(':selected').val())
+    let mode = $('.selected-mode').attr('id');
+     window.location.href = `./score.html?level=${lvl}&mode=${mode}`
+  })
 }
 
 function createCardGrid (level) {
