@@ -276,6 +276,7 @@ function classicGame (level) {
 
 function timedGame (level) {
   let timeSeconds = level == 1 ? 15 : level == 2 ? 90 : 180
+  let waitTime = timeSeconds * 1000;
   let picBlocked = false
   let firstOpened = false
   let secondOpened = false
@@ -303,7 +304,7 @@ function timedGame (level) {
     clearInterval(interval)
     gameEnd(false, null, null)
     console.log('Game finished: ' + gameFinished)
-  }, timeSeconds * 1000)
+  }, waitTime)
 
   $('.picture-card').click(function () {
     if (picBlocked || gameFinished) return
